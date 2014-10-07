@@ -1,0 +1,24 @@
+<html>
+<body>
+{% if "character" in session %}
+    <table>
+        <tr>
+            <th>CharacterName</th>
+            <td>{{ session.character.CharacterName }}</td>
+        </tr>
+        <tr>
+            <th>CharacterOwnerHash</th>
+            <td>{{ session.character.CharacterOwnerHash }}</td>
+        </tr>
+        <tr>
+            <th>CharacterID</th>
+            <td>{{ session.character.CharacterID }}</td>
+        </tr>
+    </table>
+    <a href="{{ url_for("logout") }}">Logout</a>
+{% else %}
+    <a href="{{ url_for("login") }}">Login</a>
+{% endif %}
+</body>
+</html>
+
